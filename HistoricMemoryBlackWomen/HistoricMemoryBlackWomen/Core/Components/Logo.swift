@@ -18,13 +18,13 @@ struct Logo: View {
         VStack(spacing: 12) {
             Image(systemName: iconName)
                 .resizable()
-                .frame(width: 40, height: 30)
+                .frame(width: 60, height: 50)
                 .foregroundColor(iconColor)
             Text(title)
                 .font(.title3)
                 .fontWeight(.semibold)
         }
-        .padding(.top, 20)
+        .padding(.top, 30)
     }
 }
 

@@ -10,7 +10,8 @@ import Foundation
 extension String {
     
     var specialCharactersRemoved: String {
-        let allowedCharacters = CharacterSet.alphanumerics.union(.whitespaces)
+        var allowedCharacters = CharacterSet.alphanumerics
+        allowedCharacters.insert(charactersIn: " .,")
         let filteredString = self.unicodeScalars.filter { allowedCharacters.contains($0) }
         return String(String.UnicodeScalarView(filteredString))
     }
