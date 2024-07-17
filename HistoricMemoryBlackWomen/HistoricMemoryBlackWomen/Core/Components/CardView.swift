@@ -14,19 +14,28 @@ struct CardView: View {
     var image: AnyView
     
     var body: some View {
-        VStack(alignment: .center, spacing: 25) {
-            image
-                .frame(maxWidth: 250, maxHeight: 250)
+        ZStack {
+            RoundedRectangle(cornerRadius: 12)
+                .fill(.themePink)
+                .frame(width: 309, height: 380)
+                .padding(.leading, 10)
+                .padding(.top, 14)
             
-            VStack {
-                Text(name)
-                    .font(.headline).bold()
-                    .foregroundStyle(.black)
+            VStack(alignment: .center, spacing: 25) {
+                image
+                    .frame(maxWidth: 250, maxHeight: 250)
+                
+                VStack {
+                    Text(name)
+                        .font(.title3).bold()
+                        .foregroundStyle(.black)
+                }
             }
+            .frame(width: 280, height: 350)
+            .padding(10)
+            .background(.white)
+            .cornerRadius(12)
         }
-        .frame(width: 280, height: 350)
-        .padding(10)
-        .background(.white)
         .cornerRadius(12)
         .shadow(radius: 5)
     }

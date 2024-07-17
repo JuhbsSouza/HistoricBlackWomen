@@ -20,11 +20,12 @@ struct Logo: View {
                 .resizable()
                 .frame(width: 60, height: 50)
                 .foregroundColor(iconColor)
+                .padding(.top, 40)
+
             Text(title)
-                .font(.title3)
+                .font(.title2)
                 .fontWeight(.semibold)
         }
-        .padding(.top, 30)
     }
 }
 
@@ -32,5 +33,5 @@ struct Logo: View {
     Logo(
         title: "Mulheres negras da história",
         iconName: "crown.fill",
-        iconColor: Color.secondaryYellow
+        iconColor: Color.themeYellow
     )}

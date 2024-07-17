@@ -11,31 +11,33 @@ struct WomanDetailsView: View {
     
     // MARK: - Stored Properties
     let woman: Woman
-    
-    // MARK: - Actions
-    var backToDashboard: (() -> Void)
-    
+    var image: AnyView
+        
     var body: some View {
         VStack {
-            Spacer()
-            
-            Text(woman.title)
-                .font(.title2).bold()
-                .foregroundStyle(Color.themePink)
-                .padding(.bottom, 30)
-                        
-            Text(woman.description.specialCharactersRemoved)
-                .font(.footnote)
-                .multilineTextAlignment(.leading)
-            
-            Spacer()
-            
-            PrimaryButton(
-                title: "Ok",
-                bgColors: [.themePink, .secondaryPink]) {
-                    backToDashboard()
+            VStack(spacing: 16) {
+                VStack {
+                    image
                 }
+                .frame(maxHeight: 250)
+                
+                Text(woman.title)
+                    .font(.title2).bold()
+                    .foregroundStyle(Color.themePink)
+                
+                ScrollView(.vertical, showsIndicators: false) {
+                    Text(woman.description.specialCharactersRemoved)
+                        .font(.caption)
+                        .multilineTextAlignment(.leading)
+                        .lineSpacing(1.2)
+                }
+            }
+            .padding(24)
+            .background(.white)
+            .cornerRadius(6)
+            .shadow(radius: 4)
         }
         .padding(30)
+        .background(.secondaryYellow)
     }
 }

@@ -64,8 +64,8 @@ extension MainNavigation {
             })
         case .womanDetails(let woman):
             WomanDetailsView(
-                woman: woman,
-                backToDashboard: dismissSheet
+                woman: woman, 
+                image: AnyView(getImageByUrl(url: (woman.metadata?.image!.url)!))
             )
         }
     }

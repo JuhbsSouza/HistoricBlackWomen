@@ -21,8 +21,10 @@ struct Dashboard: View {
             Logo(
                 title: "Mulheres negras da história",
                 iconName: "crown.fill",
-                iconColor: Color.secondaryYellow
+                iconColor: Color.themeYellow
             )
+            
+            Spacer()
             
             if let womenList = viewModel.womenListFilteredByImage {
                 CarouselView(
@@ -40,6 +42,11 @@ struct Dashboard: View {
                         }
                     }
                     .padding(.horizontal)
+                IntructionsInfo(
+                    message: "Clique no cartão para saber mais"
+                )
+            } else {
+                EmptyState(message: "Carregando lista...")
             }
         }
         .task {
