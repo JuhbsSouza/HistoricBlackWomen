@@ -15,7 +15,7 @@ extension View {
             case .success(let image):
                 image
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .aspectRatio(contentMode: .fit)
             case .empty:
                 ProgressView()
             case .failure:

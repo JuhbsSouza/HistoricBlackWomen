@@ -8,6 +8,7 @@
 import SwiftUI
 
 enum Page: Hashable, Identifiable {
+    
     case dashboard
     case womanDetails(woman: Woman)
     

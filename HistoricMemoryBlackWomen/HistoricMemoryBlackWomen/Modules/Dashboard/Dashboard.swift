@@ -28,7 +28,7 @@ struct Dashboard: View {
                 CarouselView(
                     currentIndex: $currentIndex,
                     spacing: 0,
-                    cardPadding: 20,
+                    cardPadding: 30,
                     items: womenList,
                     id: \.self) { woman, _  in
                         CardView(

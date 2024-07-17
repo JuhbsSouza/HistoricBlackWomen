@@ -16,29 +16,26 @@ struct WomanDetailsView: View {
     var backToDashboard: (() -> Void)
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack {
+            Spacer()
+            
             Text(woman.title)
-                .font(.title).bold()
+                .font(.title2).bold()
                 .foregroundStyle(Color.themePink)
+                .padding(.bottom, 30)
+                        
+            Text(woman.description.specialCharactersRemoved)
+                .font(.footnote)
+                .multilineTextAlignment(.leading)
             
-                Text("Resumo")
-                    .font(.subheadline)
-                    .padding(.top, 4)
-                
-                Text(woman.description)
-                    .font(.footnote)
-                    .foregroundStyle(.black)
-                    .multilineTextAlignment(.leading)
+            Spacer()
             
-            HStack {
-                PrimaryButton(
-                    title: "Ok",
-                    bgColors: [.themePink, .secondaryPink]) {
-                        backToDashboard()
-                    }
-            }
+            PrimaryButton(
+                title: "Ok",
+                bgColors: [.themePink, .secondaryPink]) {
+                    backToDashboard()
+                }
         }
-        .padding([.vertical], 30)
-        .padding([.horizontal], 25)
+        .padding(30)
     }
 }

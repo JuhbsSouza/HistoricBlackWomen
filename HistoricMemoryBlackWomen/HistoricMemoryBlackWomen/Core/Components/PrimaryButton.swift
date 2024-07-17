@@ -18,17 +18,18 @@ struct PrimaryButton: View {
         Button(action: action) {
             Text(title)
                 .foregroundStyle(.white)
-                .font(.footnote)
-                .padding(8)
+                .font(.headline)
+                .padding(.horizontal, 25)
+                .padding(.vertical, 8)
         }
         .background(Gradient(colors: bgColors))
-        .cornerRadius(12)
+        .cornerRadius(8)
     }
 }
 
 #Preview {
     PrimaryButton(
-        title: "Start",
+        title: "Ok",
         bgColors: [
             Color.themePink,
             Color.secondaryPink
